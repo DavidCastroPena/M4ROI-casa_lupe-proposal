@@ -1,6 +1,6 @@
 # Casa Lupe Happy Hour — Promotion Page
 
-**Live URL:** `https://yourusername.github.io/casa-lupe-happyhour`
+**Live URL:** https://davidcastropena.github.io/M4ROI-casa_lupe-proposal/
 **Form:** [forms.gle/xxCGtQfWDSxoYs9w7](https://forms.gle/xxCGtQfWDSxoYs9w7)
 
 ---
