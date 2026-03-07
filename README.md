@@ -26,7 +26,7 @@ Rather than a branding campaign, this is a **demand hypothesis test** run throug
 | H3 | Google Ads local search reaches high-intent customers in 94041/94040 | Ad CTR (benchmark: 4–6% for restaurant local) |
 | H4 | The Google Form is a CRM seed — every submission is a named, emailed lead | Form submissions vs. actual in-store redemptions |
 | H5 | Showing crossed-out prices (~~$15~~ → $9) outperforms flat "special price" framing | Qualitative now; A/B testable in round 2 |
-
+| H6 | Images about the feature dishes in the context of the real erstaurant increase the likehood of conversion|
 ---
 
 ## 30-Day Success Targets
