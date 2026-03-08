@@ -309,19 +309,28 @@
     </p>
 
     <div class="form-wrapper">
-      <!--
-        HOW TO GET YOUR EMBED URL:
-        1. Open your Google Form at forms.google.com
-        2. Click Send (top right)
-        3. Click the < > (Embed) icon
-        4. Copy the src URL from the iframe code shown
-        5. Paste it below replacing YOUR_EMBED_URL
-      -->
       <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfokrotubRQhK5M3-zg1WrU7zVVvlFVRK05Cq5t7OUpMoAbrA/viewform?embedded=true"
-        title="Casa Lupe Happy Hour Coupon Form">
-        Loading form…
+        id="coupon-form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfokrotubRQhK5M3-zg1WrU7zVVvlFVRK05Cq5t7OUpMoAbrA/viewform?embedded=true&hl=en"
+        width="100%"
+        height="600"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Casa Lupe Happy Hour Coupon Form"
+        onload="document.getElementById('form-fallback').style.display='none'">
+        Loading…
       </iframe>
+    </div>
+
+    <!-- Fallback if iframe is blocked by browser -->
+    <div id="form-fallback" style="margin-top:1rem;">
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:.8rem;">
+        If the form above doesn't load, tap the button below:
+      </p>
+      <a href="https://forms.gle/w3nRK7dtHEwpXGkP9" target="_blank" rel="noopener" class="btn">
+        Get My Coupon Now →
+      </a>
     </div>
 
     <p class="fine">Dine-in only · One coupon per table · Valid Mon–Fri 3–6 PM</p>
