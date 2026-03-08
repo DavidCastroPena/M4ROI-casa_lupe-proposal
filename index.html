@@ -354,7 +354,8 @@
     <form
       class="coupon-form"
       action="https://formspree.io/f/mreybkvj"
-      method="POST">
+      method="POST"
+      id="happyhour-form">
 
       <!-- Hidden field to tag this as a Happy Hour lead -->
       <input type="hidden" name="campaign" value="Happy Hour Landing Page" />
@@ -408,5 +409,27 @@
 
   </div>
 
+  <script>
+    document.getElementById('happyhour-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          window.location.href = 'thank-you.html';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(function() {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
 </body>
 </html>
