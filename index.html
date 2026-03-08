@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Lupe Mountain View — Happy Hour Coupons</title>
-  <meta name="description" content="Casa Lupe Mountain View Happy Hour. Save up to $6. Special prices on margaritas, drinks & sizzling chicken fajitas. Mon–Fri 3–6 PM." />
+  <meta name="description" content="Casa Lupe Mountain View Happy Hour. Special prices on margaritas & sizzling chicken fajitas. Mon–Fri 3–6 PM. Claim your coupon." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
@@ -23,41 +23,43 @@
     }
 
     html { height: 100%; }
-    body { min-height: 100%; overflow-y: auto; }
-
     body {
+      min-height: 100%;
+      overflow-y: auto;
       font-family: 'Lato', sans-serif;
       font-weight: 300;
       color: var(--dark);
       background-image: url('https://images.unsplash.com/photo-1534482421-64566f976cfa?w=1600&q=85');
       background-size: cover;
       background-position: center 35%;
-      min-height: 100svh;
+      background-attachment: fixed;
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.5rem 3rem;
     }
 
     body::before {
       content: '';
       position: fixed; inset: 0;
-      background: rgba(20, 8, 0, 0.62);
+      background: rgba(20, 8, 0, 0.65);
       z-index: 0;
     }
 
+    /* ── CARD ── */
     .card {
       position: relative; z-index: 1;
       background: rgba(250, 247, 242, 0.97);
       backdrop-filter: blur(6px);
       border-radius: .5rem;
       padding: 2.2rem 2.4rem 2rem;
-      max-width: 520px;
+      max-width: 560px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 24px 80px rgba(0,0,0,.45);
+      box-shadow: 0 24px 80px rgba(0,0,0,.5);
     }
 
+    /* ── BRAND ── */
     .brand {
       font-family: 'Playfair Display', serif;
       font-style: italic;
@@ -74,22 +76,21 @@
       border-radius: 1px;
     }
 
+    /* ── SAVINGS BANNER ── */
     .savings-banner {
       background: var(--green);
       border-radius: .35rem;
       padding: .7rem 1rem;
       margin-bottom: 1.1rem;
     }
-    .savings-headline {
-      font-size: 1rem; font-weight: 700;
-      color: var(--white); letter-spacing: .02em;
-    }
+    .savings-headline { font-size: 1rem; font-weight: 700; color: var(--white); }
     .savings-headline strong { font-size: 1.3rem; color: #7EFFA0; }
     .savings-sub {
       font-size: .7rem; color: rgba(255,255,255,.7);
       letter-spacing: .1em; text-transform: uppercase; margin-top: .2rem;
     }
 
+    /* ── HOURS ── */
     .hours {
       display: inline-flex; gap: .6rem;
       margin-bottom: 1.1rem; flex-wrap: wrap; justify-content: center;
@@ -102,9 +103,10 @@
     }
     .hour-pill span { color: var(--gold); }
 
+    /* ── OFFER ITEMS ── */
     .offers {
       display: flex; flex-direction: column;
-      gap: .6rem; margin-bottom: 1.4rem;
+      gap: .6rem; margin-bottom: 1.6rem;
     }
 
     .offer-item {
@@ -118,13 +120,8 @@
       padding: .7rem 1rem;
       text-align: left;
     }
-
     .offer-item .ico { font-size: 1.2rem; }
-
-    .offer-text {
-      font-size: .88rem; color: var(--dark);
-      font-weight: 600; line-height: 1.25;
-    }
+    .offer-text { font-size: .88rem; color: var(--dark); font-weight: 600; line-height: 1.25; }
 
     .pricing {
       display: flex; align-items: center;
@@ -141,32 +138,23 @@
       padding: .15rem .45rem;
     }
 
-    /* ── IMAGE SLOT — bigger, always shows real media ── */
+    /* ── IMAGE SLOT ── */
     .img-slot {
       width: 90px; height: 90px;
       border-radius: .4rem;
       border: 2px solid var(--border);
       overflow: hidden;
       flex-shrink: 0;
-      position: relative;
       background: var(--cream);
     }
-
-    .img-slot img,
-    .img-slot video {
+    .img-slot img, .img-slot video {
       width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;         /* always visible — no more display:none */
+      object-fit: cover; display: block;
     }
-
-    /* placeholder only shown when media fails to load */
     .img-slot .placeholder {
-      display: none;          /* hidden by default; shown via JS on error */
-      width: 100%; height: 100%;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: .2rem;
+      display: none; width: 100%; height: 100%;
+      flex-direction: column; align-items: center;
+      justify-content: center; gap: .2rem;
     }
     .img-slot .placeholder-icon { font-size: 1.1rem; color: var(--muted); }
     .img-slot .placeholder-label {
@@ -175,28 +163,48 @@
       color: var(--muted); text-align: center; line-height: 1.3;
     }
 
-    .btn {
-      display: block; width: 100%;
-      background: var(--rust); color: var(--white);
-      font-family: 'Lato', sans-serif; font-weight: 700;
-      font-size: 1rem; letter-spacing: .1em; text-transform: uppercase;
-      text-decoration: none; padding: 1.1rem; border-radius: .35rem;
-      transition: background .2s, transform .18s, box-shadow .2s;
-      box-shadow: 0 6px 24px rgba(184,74,30,.38);
+    /* ── FORM SECTION ── */
+    .form-divider {
+      display: flex; align-items: center; gap: .8rem;
+      margin-bottom: 1.2rem;
     }
-    .btn:hover {
-      background: #9D3415; transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(184,74,30,.5);
+    .form-divider-line { flex: 1; height: 1px; background: var(--border); }
+    .form-divider-label {
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); white-space: nowrap;
+    }
+
+    .form-intro {
+      font-size: .85rem; color: var(--muted);
+      margin-bottom: 1.2rem; line-height: 1.6;
+    }
+    .form-intro strong { color: var(--rust); }
+
+    /* Google Form iframe */
+    .form-wrapper {
+      border-radius: .4rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .form-wrapper iframe {
+      width: 100%;
+      height: 520px;
+      border: none;
+      display: block;
     }
 
     .fine {
-      margin-top: .85rem; font-size: .68rem;
+      margin-top: 1rem; font-size: .68rem;
       color: var(--muted); letter-spacing: .04em;
     }
 
     @media (max-width: 420px) {
-      .card { padding: 1.8rem 1.3rem 1.6rem; }
+      .card { padding: 1.8rem 1.2rem 1.6rem; }
       .img-slot { width: 72px; height: 72px; }
+      .form-wrapper iframe { height: 580px; }
     }
   </style>
 </head>
@@ -204,6 +212,7 @@
 
   <div class="card">
 
+    <!-- HEADER -->
     <div class="brand">
       Casa Lupe Mountain View<br>
       <em>Happy Hour Coupons</em>
@@ -211,18 +220,20 @@
 
     <div class="divider-gold"></div>
 
+    <!-- SAVINGS -->
     <div class="savings-banner">
       <div class="savings-headline">Save up to <strong>$11</strong> on one visit</div>
       <div class="savings-sub">Happy Hour exclusive · Dine-in only</div>
     </div>
 
+    <!-- HOURS -->
     <div class="hours">
       <div class="hour-pill"><span>Mon – Fri</span> &nbsp; 3:00 – 6:00 PM</div>
     </div>
 
+    <!-- OFFERS -->
     <div class="offers">
 
-      <!-- FAJITAS -->
       <div class="offer-item">
         <span class="ico">🍳</span>
         <div class="offer-text">
@@ -236,8 +247,7 @@
         </div>
         <div class="img-slot">
           <video src="casa1.mp4" autoplay muted loop playsinline
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          </video>
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"></video>
           <div class="placeholder">
             <div class="placeholder-icon">📷</div>
             <div class="placeholder-label">casa1</div>
@@ -245,7 +255,6 @@
         </div>
       </div>
 
-      <!-- MARGARITA -->
       <div class="offer-item">
         <span class="ico">🍹</span>
         <div class="offer-text">
@@ -267,7 +276,6 @@
         </div>
       </div>
 
-      <!-- NON-ALCOHOLIC -->
       <div class="offer-item">
         <span class="ico">🥤</span>
         <div class="offer-text">
@@ -288,11 +296,35 @@
 
     </div>
 
-    <a href="https://forms.gle/xxCGtQfWDSxoYs9w7" target="_blank" rel="noopener" class="btn">
-      Get My Coupon Now →
-    </a>
+    <!-- EMBEDDED FORM -->
+    <div class="form-divider">
+      <div class="form-divider-line"></div>
+      <div class="form-divider-label">Claim Your Coupon Below</div>
+      <div class="form-divider-line"></div>
+    </div>
 
-    <p class="fine">Dine-in only · One coupon per table · Valid during happy hour</p>
+    <p class="form-intro">
+      Fill out the form and show it at Casa Lupe during Happy Hour.<br>
+      <strong>No printing needed — just show your phone.</strong>
+    </p>
+
+    <div class="form-wrapper">
+      <!--
+        HOW TO GET YOUR EMBED URL:
+        1. Open your Google Form at forms.google.com
+        2. Click Send (top right)
+        3. Click the < > (Embed) icon
+        4. Copy the src URL from the iframe code shown
+        5. Paste it below replacing YOUR_EMBED_URL
+      -->
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfokrotubRQhK5M3-zg1WrU7zVVvlFVRK05Cq5t7OUpMoAbrA/viewform?embedded=true"
+        title="Casa Lupe Happy Hour Coupon Form">
+        Loading form…
+      </iframe>
+    </div>
+
+    <p class="fine">Dine-in only · One coupon per table · Valid Mon–Fri 3–6 PM</p>
 
   </div>
 
