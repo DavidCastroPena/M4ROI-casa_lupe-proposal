@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coupon Confirmed — Casa Lupe Mountain View</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:  #FFFFFF;
+      --cream:  #FAF7F2;
+      --dark:   #1C1008;
+      --rust:   #B84A1E;
+      --gold:   #C8943A;
+      --muted:  #8B7355;
+      --border: #E8DDD0;
+      --green:  #2E6B3E;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      background-image: url('https://images.unsplash.com/photo-1534482421-64566f976cfa?w=1600&q=85');
+      background-size: cover;
+      background-position: center 35%;
+      background-attachment: fixed;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: rgba(20, 8, 0, 0.65);
+      z-index: 0;
+    }
+
+    .card {
+      position: relative; z-index: 1;
+      background: rgba(250, 247, 242, 0.97);
+      backdrop-filter: blur(6px);
+      border-radius: .5rem;
+      padding: 2.8rem 2.4rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,.5);
+    }
+
+    .check {
+      width: 4rem; height: 4rem;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: .4rem;
+    }
+    .brand em { color: var(--rust); }
+
+    .divider-gold {
+      width: 3rem; height: 2px;
+      background: var(--gold);
+      margin: .8rem auto 1.4rem;
+      border-radius: 1px;
+    }
+
+    .confirm-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-style: italic;
+      color: var(--green);
+      margin-bottom: .8rem;
+    }
+
+    .confirm-msg {
+      font-size: .95rem;
+      color: var(--dark);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .confirm-msg strong { color: var(--rust); }
+
+    /* Coupon box */
+    .coupon-box {
+      background: var(--cream);
+      border: 2px dashed var(--gold);
+      border-radius: .5rem;
+      padding: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .coupon-label {
+      font-size: .65rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: .6rem;
+    }
+
+    .coupon-items {
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+
+    .coupon-item {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .88rem; color: var(--dark); font-weight: 600;
+    }
+
+    .coupon-price {
+      display: flex; align-items: center; gap: .5rem;
+    }
+
+    .orig { font-size: .78rem; color: var(--muted); text-decoration: line-through; font-weight: 400; }
+    .sale { font-size: 1rem; font-weight: 700; color: var(--green); }
+
+    .hours-reminder {
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); margin-top: 1rem;
+    }
+
+    .address {
+      font-size: .82rem; color: var(--muted);
+      margin-top: .4rem; line-height: 1.5;
+    }
+
+    .address a {
+      color: var(--rust); text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="check">✓</div>
+
+    <div class="brand">
+      Casa Lupe Mountain View<br>
+      <em>Happy Hour Coupons</em>
+    </div>
+
+    <div class="divider-gold"></div>
+
+    <h1 class="confirm-title">Your Coupon is Confirmed!</h1>
+
+    <p class="confirm-msg">
+      Thank you! Just <strong>show this screen</strong> to your server
+      when you arrive during Happy Hour and we'll take care of the rest.<br><br>
+      We can't wait to see you!
+    </p>
+
+    <div class="coupon-box">
+      <div class="coupon-label">Your Happy Hour Prices</div>
+      <div class="coupon-items">
+        <div class="coupon-item">
+          🍳 Sizzling Chicken Fajitas
+          <div class="coupon-price">
+            <span class="orig">$25</span>
+            <span class="sale">$20</span>
+          </div>
+        </div>
+        <div class="coupon-item">
+          🍹 House Margarita
+          <div class="coupon-price">
+            <span class="orig">$15</span>
+            <span class="sale">$9</span>
+          </div>
+        </div>
+        <div class="coupon-item">
+          🥤 Non-Alcoholic Beverages
+          <div class="coupon-price">
+            <span class="sale">Special Price</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hours-reminder">Mon – Fri &nbsp;·&nbsp; 3:00 – 6:00 PM &nbsp;·&nbsp; Dine-in only</div>
+    <div class="address">
+      459 Castro St, Mountain View, CA 94041<br>
+      <a href="https://maps.google.com/?q=Casa+Lupe+Mountain+View" target="_blank">Get Directions →</a>
+    </div>
+
+  </div>
+</body>
+</html>
