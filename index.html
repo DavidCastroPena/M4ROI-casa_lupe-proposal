@@ -76,6 +76,21 @@
       border-radius: 1px;
     }
 
+    /* ── TOP CALLOUT ── */
+    .top-callout {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: var(--rust);
+      background: rgba(184,74,30,.08);
+      border: 1.5px solid rgba(184,74,30,.25);
+      border-radius: .35rem;
+      padding: .7rem 1rem;
+      margin-bottom: 1.1rem;
+      line-height: 1.4;
+      letter-spacing: .01em;
+    }
+
     /* ── SAVINGS BANNER ── */
     .savings-banner {
       background: var(--green);
@@ -170,14 +185,14 @@
     }
     .form-divider-line { flex: 1; height: 1px; background: var(--border); }
     .form-divider-label {
-      font-size: .7rem; font-weight: 700;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: var(--muted); white-space: nowrap;
+      font-size: .9rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--dark); white-space: nowrap;
     }
 
     .form-intro {
-      font-size: .85rem; color: var(--muted);
-      margin-bottom: 1.2rem; line-height: 1.6;
+      font-size: 1rem; color: var(--dark);
+      margin-bottom: 1.2rem; line-height: 1.65; font-weight: 400;
     }
     .form-intro strong { color: var(--rust); }
 
@@ -219,6 +234,9 @@
     </div>
 
     <div class="divider-gold"></div>
+
+    <!-- TOP CALLOUT -->
+    <div class="top-callout">Fill the form below to get Happy Hour prices</div>
 
     <!-- SAVINGS -->
     <div class="savings-banner">
