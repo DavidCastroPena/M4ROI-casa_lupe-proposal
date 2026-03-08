@@ -22,7 +22,8 @@
       --green:  #2E6B3E;
     }
 
-    html, body { height: 100%; }
+    html { height: 100%; }
+    body { min-height: 100%; overflow-y: auto; }
 
     body {
       font-family: 'Lato', sans-serif;
@@ -33,9 +34,9 @@
       background-position: center 35%;
       min-height: 100svh;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
     }
 
     body::before {
