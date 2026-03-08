@@ -196,19 +196,44 @@
     }
     .form-intro strong { color: var(--rust); }
 
-    /* Google Form iframe */
-    .form-wrapper {
-      border-radius: .4rem;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--white);
+    /* ── CUSTOM FORM ── */
+    .coupon-form { display: flex; flex-direction: column; gap: .75rem; text-align: left; }
+
+    .form-group { display: flex; flex-direction: column; gap: .3rem; }
+
+    .form-group label {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted);
     }
 
-    .form-wrapper iframe {
+    .form-group input,
+    .form-group select {
       width: 100%;
-      height: 520px;
-      border: none;
-      display: block;
+      padding: .75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: .35rem;
+      font-family: 'Lato', sans-serif;
+      font-size: .92rem;
+      color: var(--dark);
+      background: var(--white);
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--rust);
+      box-shadow: 0 0 0 3px rgba(184,74,30,.12);
+    }
+
+    .form-group input::placeholder { color: #C4A98A; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
     }
 
     .fine {
@@ -314,7 +339,7 @@
 
     </div>
 
-    <!-- EMBEDDED FORM -->
+    <!-- CUSTOM FORM -->
     <div class="form-divider">
       <div class="form-divider-line"></div>
       <div class="form-divider-label">Claim Your Coupon Below</div>
@@ -326,30 +351,58 @@
       <strong>No printing needed — just show your phone.</strong>
     </p>
 
-    <div class="form-wrapper">
-      <iframe
-        id="coupon-form"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfokrotubRQhK5M3-zg1WrU7zVVvlFVRK05Cq5t7OUpMoAbrA/viewform?embedded=true&hl=en"
-        width="100%"
-        height="600"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Casa Lupe Happy Hour Coupon Form"
-        onload="document.getElementById('form-fallback').style.display='none'">
-        Loading…
-      </iframe>
-    </div>
+    <form
+      class="coupon-form"
+      action="https://formspree.io/f/mreybkvj"
+      method="POST">
 
-    <!-- Fallback if iframe is blocked by browser -->
-    <div id="form-fallback" style="margin-top:1rem;">
-      <p style="font-size:.8rem;color:var(--muted);margin-bottom:.8rem;">
-        If the form above doesn't load, tap the button below:
-      </p>
-      <a href="https://forms.gle/w3nRK7dtHEwpXGkP9" target="_blank" rel="noopener" class="btn">
+      <!-- Hidden field to tag this as a Happy Hour lead -->
+      <input type="hidden" name="campaign" value="Happy Hour Landing Page" />
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="first_name" placeholder="Maria" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="last_name" placeholder="Lopez" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="day">Preferred Day to Visit</label>
+        <select id="day" name="preferred_day" required>
+          <option value="" disabled selected>Choose a day…</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="party">Party Size</label>
+        <select id="party" name="party_size">
+          <option value="" disabled selected>How many people?</option>
+          <option value="1">Just me</option>
+          <option value="2">2</option>
+          <option value="3-4">3 – 4</option>
+          <option value="5+">5 or more</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn" style="border:none;cursor:pointer;margin-top:.4rem;">
         Get My Coupon Now →
-      </a>
-    </div>
+      </button>
+
+    </form>
 
     <p class="fine">Dine-in only · One coupon per table · Valid Mon–Fri 3–6 PM</p>
 
